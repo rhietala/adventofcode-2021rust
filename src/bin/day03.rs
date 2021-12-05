@@ -40,9 +40,8 @@ fn part2(input: Vec<String>) -> u32 {
     let input_len: usize = input.clone()[0].len();
 
     let ints: Vec<u16> = input.into_iter().map(|s| bit_string_to_int(s)).collect();
-    let ints2 = ints.clone();
 
-    let oxygen: u16 = filter_by_pos(ints2, input_len - 1, false);
+    let oxygen: u16 = filter_by_pos(ints.clone(), input_len - 1, false);
     let scrubber: u16 = filter_by_pos(ints, input_len - 1, true);
 
     u32::from(oxygen) * u32::from(scrubber)
