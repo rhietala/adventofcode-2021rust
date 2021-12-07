@@ -16,13 +16,13 @@ pub fn read_file_i32(filename: &str) -> Vec<i32> {
         .collect()
 }
 
-pub fn read_file_u8_csv(filename: &str) -> Vec<Vec<u8>> {
+pub fn read_file_u16_csv(filename: &str) -> Vec<Vec<u16>> {
     read_file(filename)
         .unwrap()
         .map(|l| {
             l.unwrap()
                 .split(",")
-                .map(|s| s.parse::<u8>().unwrap())
+                .map(|s| s.parse::<u16>().unwrap())
                 .collect()
         })
         .collect()
